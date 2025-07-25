@@ -161,7 +161,7 @@
             if context.before and not context.blueprint then
                 	if card.facing == "back" then
 					card:flip()
-                     end
+                end
             end
         end
     }
