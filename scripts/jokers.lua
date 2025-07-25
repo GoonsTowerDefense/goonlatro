@@ -5,17 +5,14 @@
         loc_txt = {
             name = 'Crazy Eights',
             text = {
-                "{C:mult}+#1#{} Mult,",
-                "{C:mult}X#3#{} Mult, gains",
-                "{C:mult}+#2#{} Mult and", 
-		"{C:mult}X#2#{} Mult when scored.",
+                "{C:mult}X#2#{} Mult, gains",
+                "{C:mult}X#1#{} Mult, when scored",
             }
         },
 
            -- config of the joker. Variables go here.
         config = {
            extra = {
-                mult = 8,
                 gain = 8,
                 Xmult = 8
          }
@@ -58,9 +55,8 @@
             return {
                 vars = {
                         -- #1#
-                    card.ability.extra.mult,
-                        -- #2#
                     card.ability.extra.gain,
+                        -- #2#
                     card.ability.extra.Xmult
                     }
                 }
@@ -71,17 +67,8 @@
                 -- context.joker_main takes place when the joker is meant to score.
             if context.joker_main then
                 return {
-                        -- adds the number contained in the mult variable to the score.
-                mult_mod = card.ability.extra.mult,
                         -- message is the text that appears when the joker scores.
                         -- localize is used to make sure the text works across multiple languages.
-                    message  = localize {
-                        type = 'variable',
-                        key = 'a_mult',
-                        vars = {
-                            card.ability.extra.mult
-                        }
-                    },
                     message  = localize {
                          type = 'variable',
                          key = 'a_xmult',
@@ -89,13 +76,12 @@
                              card.ability.extra.Xmult,
                          }
                      },
+                Xmult_mod = card.ability.extra.Xmult
                 }
             end
                 -- context.after takes place after the hand is scored.
                 -- context.blueprint applies if the joker is a blueprint copy.
             if context.after and not context.blueprint then
-                            -- adds the gain variable to the base mult number.
-                        card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.gain
                         card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.gain
                     return {
                             -- another message, just prints the text.
@@ -158,10 +144,15 @@
 
             -- calculate is where the scoring and effects of the joker are handled. 
         calculate = function(self, card, context)
-            if context.before and not context.blueprint then
-                	if card.facing == "back" then
-					card:flip()
-                     end
+            if context.hand_drawn then
+                for index, card in ipairs(G.hand.cards) do
+                    if G.hand.cards[index].facing == 'back' then
+                    -- Flip the card's facing and sprite_facing to 'back'
+                    G.hand.cards[index].facing = 'front'
+                    G.hand.cards[index].sprite_facing = 'front'
+                    end
+                end
             end
-        end
+    end
     }
+
