@@ -16,7 +16,7 @@ pitch = 1.0,
 
 SMODS.Sound { -- used to import the sound effect
 key = 'crazyeights',
-path = 'crazyeights',
+path = 'crazyeights.wav',
 volume = 1.3,
 pitch = 1.0,
 }
