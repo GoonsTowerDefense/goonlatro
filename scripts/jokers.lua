@@ -7,7 +7,8 @@
             text = {
                 "{C:mult}+#1#{} Mult,",
                 "{C:mult}X#3#{} Mult, gains",
-                "{C:mult}+#2#{} Mult when scored.",
+                "{C:mult}+#2#{} Mult and", 
+		"{C:mult}X#2#{} Mult when scored.",
             }
         },
 
