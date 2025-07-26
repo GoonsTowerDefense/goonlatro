@@ -2,16 +2,16 @@
 	"id": "goonlatro",
 	"name": "Goonlatro",
 	"display_name": "Goonlatro",
-	"author": ["GMO298", "iam4pple"],
+	"author": ["GMO298", "iam4pple", "and the GTD Discord"],
 	"description": "Glory to the GTD >:3",
 	"prefix": "gl",
 	"main_file": "main.lua",
 	"priority": 0,
 	"badge_colour": "#9600ff",
 	"badge_text_colour": "#ee1c25",
-	"version": "1.0.0",
-    "dependencies": [
-    "Steamodded (>=1.*)",
-    "Lovely (>=0.6)"
-]
+	"version": "0.0.2a",
+    	"dependencies": [
+    	"Steamodded (>=1.*)",
+    	"Lovely (>=0.6)"
+	]
 }

@@ -18,7 +18,7 @@
          }
      },
             -- rarity level, 0 = common, 1 = uncommon, 2 = rare, 3 = legendary.
-        rarity = 2,
+        rarity = 4,
 
             -- atlas the joker uses for texture(s).
         atlas = 'gtd',
@@ -67,21 +67,31 @@
                 -- context.joker_main takes place when the joker is meant to score.
             if context.joker_main then
                 return {
-                        -- message is the text that appears when the joker scores.
-                        -- localize is used to make sure the text works across multiple languages.
-                    message  = localize {
-                         type = 'variable',
-                         key = 'a_xmult',
-                         vars = {
-                             card.ability.extra.Xmult,
-                         }
-                     },
+                          -- another message, just prints the text.
+                    message = "Crazy!",
+                    colour = G.C.MULT,
+                            -- plays the sound effect yippie.ogg. the prefix is needed.
+                    play_sound("gl_crazyeights"),
+                            -- needed, can be changed to context.other_card to apply to another card.
+                    card = card,
                 Xmult_mod = card.ability.extra.Xmult
                 }
             end
+
+            if context.before and context.cardarea == G.play then
+                return {
+                            -- another message, just prints the text.
+                        message = "Crazy!",
+                        colour = G.C.MULT,
+                            -- plays the sound effect yippie.ogg. the prefix is needed.
+                        play_sound("gl_crazyeights"),
+                            -- needed, can be changed to context.other_card to apply to another card.
+                        card = card
+                    }
+            end
                 -- context.after takes place after the hand is scored.
                 -- context.blueprint applies if the joker is a blueprint copy.
-            if context.after and not context.blueprint then
+            if context.end_of_round and context.cardarea == G.jokers then
                         card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.gain
                     return {
                             -- another message, just prints the text.
@@ -111,7 +121,7 @@
            -- config of the joker. Variables go here.
         config = {},
             -- rarity level, 0 = common, 1 = uncommon, 2 = rare, 3 = legendary.
-        rarity = 1,
+        rarity = 2,
 
             -- atlas the joker uses for texture(s).
         atlas = 'gtd',
@@ -156,3 +166,49 @@
     end
     }
 
+    SMODS.Joker { -- Bart --
+       key = 'clickthebart',
+
+           -- description of the joker.
+        loc_txt = {
+            name = 'Click the Bart',
+            text = {
+                "All {X:blue,C:white}face-down{} cards",
+                "will be drawn {X:red,C:white}face-up{}.",
+            }
+        },
+
+           -- config of the joker. Variables go here.
+        config = {},
+            -- rarity level, 0 = common, 1 = uncommon, 2 = rare, 3 = legendary.
+        rarity = 2,
+
+            -- atlas the joker uses for texture(s).
+        atlas = 'gtd',
+    
+            -- where on the atlas texture the joker is locarted.
+        pos = {
+            x = 3,
+            y = 0
+        },
+            -- cost of the joker in the shop.
+        cost = 8,
+
+            -- whether it is unlocked by default.
+        unlocked = false,
+
+            -- whether it is discovered by default.
+        discovered = false,
+
+            -- whether blueprint can copy this joker.
+        blueprint_compat = true,
+
+            -- whether this joker can have the perishable sticker.
+        perishable_compat = true,
+
+            -- whether this joker can have the eternal sticker.
+        eternal_compat = true,
+
+            -- whether duplicates of this joker can appear in the shop by default.
+        allow_duplicates = true,
+    }
