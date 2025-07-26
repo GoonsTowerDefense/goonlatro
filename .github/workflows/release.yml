@@ -8,8 +8,8 @@ on:
         required: true
       release_name:
         description: 'Release title'
-        required: false
-        default: ''
+        required: true
+        default: 'Goonlatro'
 
 jobs:
   release:
