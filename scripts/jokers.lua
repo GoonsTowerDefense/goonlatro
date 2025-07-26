@@ -67,17 +67,27 @@
                 -- context.joker_main takes place when the joker is meant to score.
             if context.joker_main then
                 return {
-                        -- message is the text that appears when the joker scores.
-                        -- localize is used to make sure the text works across multiple languages.
-                    message  = localize {
-                         type = 'variable',
-                         key = 'a_xmult',
-                         vars = {
-                             card.ability.extra.Xmult,
-                         }
-                     },
+                          -- another message, just prints the text.
+                    message = "Crazy!",
+                    colour = G.C.MULT,
+                            -- plays the sound effect yippie.ogg. the prefix is needed.
+                    play_sound("gl_crazyeights"),
+                            -- needed, can be changed to context.other_card to apply to another card.
+                    card = card,
                 Xmult_mod = card.ability.extra.Xmult
                 }
+            end
+
+            if context.before and context.cardarea == G.play then
+                return {
+                            -- another message, just prints the text.
+                        message = "Crazy!",
+                        colour = G.C.MULT,
+                            -- plays the sound effect yippie.ogg. the prefix is needed.
+                        play_sound("gl_crazyeights"),
+                            -- needed, can be changed to context.other_card to apply to another card.
+                        card = card
+                    }
             end
                 -- context.after takes place after the hand is scored.
                 -- context.blueprint applies if the joker is a blueprint copy.
@@ -185,10 +195,10 @@
         cost = 8,
 
             -- whether it is unlocked by default.
-        unlocked = true,
+        unlocked = false,
 
             -- whether it is discovered by default.
-        discovered = true,
+        discovered = false,
 
             -- whether blueprint can copy this joker.
         blueprint_compat = true,

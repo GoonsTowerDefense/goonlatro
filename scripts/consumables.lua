@@ -11,6 +11,10 @@ SMODS.Consumable{
     },
     config = {},
 
+    unlocked = true,
+
+    discovered = true,
+
     can_use = function(self)
         return #G.hand.cards > 0 and #G.deck.cards > 0
     end,
@@ -36,6 +40,10 @@ SMODS.Consumable{
         }
     },
     config = {},
+
+    unlocked = true,
+    
+    discovered = true,
 
     can_use = function(self)
         return #G.hand.cards > 0 and #G.deck.cards > 0
