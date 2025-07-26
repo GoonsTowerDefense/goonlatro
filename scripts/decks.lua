@@ -12,7 +12,8 @@ SMODS.Back{
     config = {              -- config for the deck, can include hands, discards, consumables, vouchers, money, etc.
         hands = 0,
         discards = 0,
-        jokers = {'j_gl_playstyle', 'j_gl_crazyeights'}
+        jokers = {'j_gl_playstyle', 'j_gl_crazyeights'},
+        consumables = {'c_gl_abigbag', 'c_gl_cookie'}
     },
 
     loc_txt = {
@@ -26,6 +27,7 @@ SMODS.Back{
             self.config.discards,   -- #1#
             self.config.hands,      -- #2#
             self.config.jokers, -- #3#
+            self.config.consumables -- #4#
         }}
     end
 }

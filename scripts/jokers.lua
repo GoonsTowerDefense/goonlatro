@@ -81,7 +81,7 @@
             end
                 -- context.after takes place after the hand is scored.
                 -- context.blueprint applies if the joker is a blueprint copy.
-            if context.after and not context.blueprint then
+            if context.end_of_round and context.cardarea == G.jokers then
                         card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.gain
                     return {
                             -- another message, just prints the text.
