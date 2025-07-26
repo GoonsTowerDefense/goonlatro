@@ -6,7 +6,7 @@
             name = 'Crazy Eights',
             text = {
                 "{C:mult}X#2#{} Mult, gains",
-                "{C:mult}X#1#{} Mult, when scored",
+                "{C:mult}X#1#{} Mult at end of round.",
             }
         },
 
