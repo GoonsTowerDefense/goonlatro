@@ -2,7 +2,7 @@
 	"id": "goonlatro",
 	"name": "Goonlatro",
 	"display_name": "Goonlatro",
-	"author": ["GMO298", "iam4pple"],
+	"author": ["GMO298", "iam4pple", "and the GTD Discord"],
 	"description": "Glory to the GTD >:3",
 	"prefix": "gl",
 	"main_file": "main.lua",
