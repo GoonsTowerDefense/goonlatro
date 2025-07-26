@@ -5,6 +5,16 @@ A mod and texture pack for Balatro that adds various Jokers and Consumables to t
 Don't expect this to be good cause it's not.
 
 We hope you have fun playing it, we know we did.
+
+Requires [Malverk](https://github.com/Eremel/Malverk), [Steamodded](https://github.com/Steamodded/smods), and [Lovely](https://github.com/ethangreen-dev/lovely-injector)
+
+## Installation
+Get the latest release from [here](https://github.com/GMO298/goonlatro/releases), unzip the file and place it in your Balatro/Mods folder.
+
+Make sure you have all of the requirements installed.
+
+Finally, start Balatro and have fun!
+
 ## Additions
 
 ### Jokers
