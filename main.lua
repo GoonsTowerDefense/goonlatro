@@ -12,9 +12,9 @@
 
         -- load jokers
 assert(SMODS.load_file('scripts/jokers.lua'))()
-
+		-- load decks
 assert(SMODS.load_file('scripts/decks.lua'))()
-
+		-- load consumables
 assert(SMODS.load_file('scripts/consumables.lua'))()
 
 -- Script Loading End
