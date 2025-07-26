@@ -155,3 +155,50 @@
             end
     end
     }
+
+    SMODS.Joker { -- Bart --
+       key = 'clickthebart',
+
+           -- description of the joker.
+        loc_txt = {
+            name = 'Click the Bart',
+            text = {
+                "All {X:blue,C:white}face-down{} cards",
+                "will be drawn {X:red,C:white}face-up{}.",
+            }
+        },
+
+           -- config of the joker. Variables go here.
+        config = {},
+            -- rarity level, 0 = common, 1 = uncommon, 2 = rare, 3 = legendary.
+        rarity = 2,
+
+            -- atlas the joker uses for texture(s).
+        atlas = 'gtd',
+    
+            -- where on the atlas texture the joker is locarted.
+        pos = {
+            x = 3,
+            y = 0
+        },
+            -- cost of the joker in the shop.
+        cost = 8,
+
+            -- whether it is unlocked by default.
+        unlocked = true,
+
+            -- whether it is discovered by default.
+        discovered = true,
+
+            -- whether blueprint can copy this joker.
+        blueprint_compat = true,
+
+            -- whether this joker can have the perishable sticker.
+        perishable_compat = true,
+
+            -- whether this joker can have the eternal sticker.
+        eternal_compat = true,
+
+            -- whether duplicates of this joker can appear in the shop by default.
+        allow_duplicates = true,
+    }

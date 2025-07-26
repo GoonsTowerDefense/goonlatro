@@ -1,9 +1,21 @@
+--- STEAMODDED HEADER
+--- MOD_NAME: Goonlatro
+--- MOD_ID: goonlatro
+--- PREFIX: gl
+--- MOD_AUTHOR: [GMO298, iam4pple, and the GTD Discord]
+--- MOD_DESCRIPTION: The GTD Balatro mod
+--- BADGE_COLOUR: 9600FF
+--- BADGE_TEXT_COLOUR: EE1C25
+--- DEPENDENCIES: [malverk, Steamodded, Lovely]
+
 -- Script Loading Start
 
         -- load jokers
 assert(SMODS.load_file('scripts/jokers.lua'))()
 
 assert(SMODS.load_file('scripts/decks.lua'))()
+
+assert(SMODS.load_file('scripts/consumables.lua'))()
 
 -- Script Loading End
 
@@ -20,7 +32,7 @@ SMODS.Sound { -- used to import the sound effect
 key = 'crazyeights',
 path = 'crazyeights.wav',
 volume = 1.3,
-pitch = 0.5,
+pitch = 1.0,
 }
 
 SMODS.Sound:register_global() -- used to import the sound effect
