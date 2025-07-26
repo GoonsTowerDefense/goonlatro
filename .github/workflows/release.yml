@@ -1,0 +1,32 @@
+name: Zip and Release
+
+on:
+  push:
+    tags:
+      - '*'  # Triggers on every tag push
+
+jobs:
+  release:
+    name: Create GitHub Release with ZIP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up release version
+        id: vars
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      - name: Zip repository
+        run: |
+          zip -r Goonlatro.${RELEASE_VERSION}.zip . -x "*.git*"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Goonlatro ${{ env.RELEASE_VERSION }}
+          tag_name: ${{ env.RELEASE_VERSION }}
+          files: Goonlatro-${{ env.RELEASE_VERSION }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
