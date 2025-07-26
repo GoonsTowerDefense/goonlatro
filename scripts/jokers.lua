@@ -18,7 +18,7 @@
          }
      },
             -- rarity level, 0 = common, 1 = uncommon, 2 = rare, 3 = legendary.
-        rarity = 2,
+        rarity = 4,
 
             -- atlas the joker uses for texture(s).
         atlas = 'gtd',
@@ -111,7 +111,7 @@
            -- config of the joker. Variables go here.
         config = {},
             -- rarity level, 0 = common, 1 = uncommon, 2 = rare, 3 = legendary.
-        rarity = 1,
+        rarity = 2,
 
             -- atlas the joker uses for texture(s).
         atlas = 'gtd',
@@ -155,4 +155,3 @@
             end
     end
     }
-

@@ -3,6 +3,8 @@
         -- load jokers
 assert(SMODS.load_file('scripts/jokers.lua'))()
 
+assert(SMODS.load_file('scripts/decks.lua'))()
+
 -- Script Loading End
 
 --Sound Junk Start
@@ -18,7 +20,7 @@ SMODS.Sound { -- used to import the sound effect
 key = 'crazyeights',
 path = 'crazyeights.wav',
 volume = 1.3,
-pitch = 1.0,
+pitch = 0.5,
 }
 
 SMODS.Sound:register_global() -- used to import the sound effect
