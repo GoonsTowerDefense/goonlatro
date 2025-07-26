@@ -1,9 +1,15 @@
-name: Zip and Release
+name: Manual Zip and Release
 
 on:
-  push:
-    tags:
-      - '*'  # Triggers on every tag push
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g., v1.0.0)'
+        required: true
+      release_name:
+        description: 'Release title'
+        required: false
+        default: ''
 
 jobs:
   release:
@@ -14,19 +20,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up release version
-        id: vars
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
-
       - name: Zip repository
         run: |
-          zip -r Goonlatro.${RELEASE_VERSION}.zip . -x "*.git*"
+          zip -r Goonlatro.${{ github.event.inputs.tag }}.zip . -x "*.git*"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: Goonlatro ${{ env.RELEASE_VERSION }}
-          tag_name: ${{ env.RELEASE_VERSION }}
-          files: Goonlatro-${{ env.RELEASE_VERSION }}.zip
+          tag_name: ${{ github.event.inputs.tag }}
+          name: ${{ github.event.inputs.release_name || github.event.inputs.tag }}
+          files: Goonlatro.${{ github.event.inputs.tag }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
