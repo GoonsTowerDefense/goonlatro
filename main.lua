@@ -35,6 +35,20 @@ volume = 1.3,
 pitch = 1.0,
 }
 
+SMODS.Sound {
+key = 'bigbag',
+path = 'bigbag.wav',
+volume = 1.5,
+pitch = 1.0,
+}
+
+SMODS.Sound {
+key = 'cookie',
+path = 'cookie.wav',
+volume = 1.5,
+pitch = 1.0,
+}
+
 SMODS.Sound:register_global() -- used to import the sound effect
 
 -- Sound Junk End

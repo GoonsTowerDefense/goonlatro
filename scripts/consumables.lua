@@ -24,6 +24,7 @@ SMODS.Consumable{
             if consumable then
             consumable:add_to_deck()
             G.consumeables:emplace(consumable)
+            play_sound("gl_bigbag")
             end
         end,
 }
@@ -57,6 +58,7 @@ SMODS.Consumable{
                 -- Add discards
                 local discards_to_add = G.GAME.current_round.discards_used
                 ease_discard(discards_to_add)
+                play_sound("gl_cookie")
 
                 return true
             end
