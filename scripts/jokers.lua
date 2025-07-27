@@ -76,7 +76,7 @@
                 }
             end
 
-            if context.post_trigger then
+            if context.post_trigger and context.cardarea == G.jokers then
                 return {
                     play_sound("gl_crazyeights")
                 }
@@ -150,8 +150,7 @@
                 for index, card in ipairs(G.hand.cards) do
                     if G.hand.cards[index].facing == 'back' then
                     -- Flip the card's facing and sprite_facing to 'back'
-                    G.hand.cards[index].facing = 'front'
-                    G.hand.cards[index].sprite_facing = 'front'
+                    G.hand.cards[index]:flip()
                     end
                 end
             end
