@@ -53,7 +53,7 @@ SMODS.Consumable{
     discovered = false,
 
     can_use = function(self)
-        return #G.hand.cards > 0 and #G.deck.cards > 0
+        return #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.discards_used > 0
     end,
 
     use = function(self, card, area)
@@ -65,7 +65,7 @@ SMODS.Consumable{
                 local discards_to_add = G.GAME.current_round.discards_used
                 ease_discard(discards_to_add)
                 play_sound("gl_cookie")
-
+                G.GAME.current_round.discards_used = 0
                 return true
             end
         }))
@@ -90,7 +90,7 @@ SMODS.Consumable{
     discovered = false,
 
     can_use = function(self)
-        return #G.hand.cards > 0 and #G.deck.cards > 0
+        return #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.hands_played > 0
     end,
 
     use = function(self, card, area)
@@ -102,7 +102,7 @@ SMODS.Consumable{
                 local hands_to_add = G.GAME.current_round.hands_played
                 ease_hands_played(hands_to_add)
                 play_sound("gl_bigbag")
-
+                G.GAME.current_round.hands_played = 0
                 return true
             end
         }))
