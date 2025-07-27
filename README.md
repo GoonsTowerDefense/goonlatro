@@ -9,7 +9,7 @@ We hope you have fun playing it, we know we did.
 Requires [Malverk](https://github.com/Eremel/Malverk), [Steamodded](https://github.com/Steamodded/smods), and [Lovely](https://github.com/ethangreen-dev/lovely-injector)
 
 ## Installation
-Get the latest release from [here](https://github.com/GMO298/goonlatro/releases), unzip the file and place it in your Balatro/Mods folder.
+Get the latest release from [here](https://github.com/GoonsTowerDefense/goonlatro/releases), unzip the file and place it in your Balatro/Mods folder.
 
 Make sure you have all of the requirements installed.
 
