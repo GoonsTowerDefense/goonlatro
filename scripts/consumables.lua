@@ -6,7 +6,7 @@ SMODS.Consumable{
     loc_txt = {
         name = 'A Big Bag', -- name of card
         text = { -- text of card
-            'Contains one {C:spectral}cookie{}',
+            'Contains one {C:spectral}cookie{}.',
         }
     },
     config = {},
@@ -20,11 +20,17 @@ SMODS.Consumable{
     end,
 
     use = function(self, card, area)
-            local consumable = create_card("Spectral", G.consumeables, nil, nil, nil, nil, "c_gl_cookie", "c_gl_cookie")
-            if consumable then
-            consumable:add_to_deck()
-            G.consumeables:emplace(consumable)
-            play_sound("gl_bigbag")
+            local cookie = create_card("Spectral", G.consumeables, nil, nil, nil, nil, "c_gl_cookie", "c_gl_cookie")
+            if cookie then
+            cookie:add_to_deck()
+            G.consumeables:emplace(cookie)
+            end
+
+            local justthebag = create_card("Spectral", G.consumeables, nil, nil, nil, nil, "c_gl_justthebag", "c_gl_justthebag")
+            if justthebag then
+                justthebag:add_to_deck()
+                G.consumeables:emplace(justthebag)
+                play_sound("gl_bigbag")
             end
         end,
 }
@@ -42,9 +48,9 @@ SMODS.Consumable{
     },
     config = {},
 
-    unlocked = true,
+    unlocked = false,
     
-    discovered = true,
+    discovered = false,
 
     can_use = function(self)
         return #G.hand.cards > 0 and #G.deck.cards > 0
@@ -64,4 +70,42 @@ SMODS.Consumable{
             end
         }))
     end
+}
+
+SMODS.Consumable{
+    key = 'justthebag',
+    set = 'Spectral',
+    atlas = 'gtd',
+    pos = {x = 3, y = 1},
+    loc_txt = {
+        name = 'Just the Bag',
+        text = {
+            'Give back all {C:white,X:blue}hands{} used.'
+        }
+    },
+    config = {},
+
+    unlocked = false,
+    
+    discovered = false,
+
+    can_use = function(self)
+        return #G.hand.cards > 0 and #G.deck.cards > 0
+    end,
+
+    use = function(self, card, area)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.1,
+            func = function()
+                -- Add hands
+                local hands_to_add = G.GAME.current_round.hands_played
+                ease_hands_played(hands_to_add)
+                play_sound("gl_bigbag")
+
+                return true
+            end
+        }))
+    end
+
 }
