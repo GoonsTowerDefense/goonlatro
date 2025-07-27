@@ -70,24 +70,16 @@
                           -- another message, just prints the text.
                     message = "Crazy!",
                     colour = G.C.MULT,
-                            -- plays the sound effect yippie.ogg. the prefix is needed.
-                    play_sound("gl_crazyeights"),
                             -- needed, can be changed to context.other_card to apply to another card.
                     card = card,
                 Xmult_mod = card.ability.extra.Xmult
                 }
             end
 
-            if context.before and context.cardarea == G.play then
+            if context.post_trigger then
                 return {
-                            -- another message, just prints the text.
-                        message = "Crazy!",
-                        colour = G.C.MULT,
-                            -- plays the sound effect yippie.ogg. the prefix is needed.
-                        play_sound("gl_crazyeights"),
-                            -- needed, can be changed to context.other_card to apply to another card.
-                        card = card
-                    }
+                    play_sound("gl_crazyeights")
+                }
             end
                 -- context.after takes place after the hand is scored.
                 -- context.blueprint applies if the joker is a blueprint copy.
