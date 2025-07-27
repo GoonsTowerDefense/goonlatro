@@ -249,11 +249,16 @@ AltTexture{
 		'j_yorick',
 		'j_chicot',
 		'j_perkeo'
-	}
+	},
+	localization = { -- keys of objects with new localizations
+        j_lucky_cat = {
+            name = 'Marcy'
+         }
+     }
 }
 
 TexturePack{
-	key = 'gtd jokers',
+	key = 'gtd_jokers',
 	textures = {
 		'gl_jokers'
 	},

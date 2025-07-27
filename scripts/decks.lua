@@ -50,24 +50,6 @@ function joker_add(jKey)
     end
 end
 
-function consumable_add(cKey)
-
-    if type(cKey) == 'string' then
-        
-        local c = SMODS.create_card({
-            key = cKey,
-            edition = 'e_negative',
-        })
-
-        c:add_to_deck()
-        G.consumeables:emplace(c)
-
-
-        SMODS.Stickers["eternal"]:apply(c, true)
-
-    end
-end
-
 SMODS.Back{
     name = "crazy",      -- name of the deck (in code)
     key = "crazy",       -- key used to call the deck 
@@ -98,15 +80,6 @@ SMODS.Back{
                 joker_add('j_gl_crazyeights')
                 joker_add('j_gl_crazyeights')
                 joker_add('j_gl_crazyeights')
-                consumable_add('j_gl_crazyeights')
-                consumable_add('j_gl_crazyeights')
-                consumable_add('j_gl_crazyeights')
-                consumable_add('j_gl_crazyeights')
-                consumable_add('j_gl_crazyeights')
-                consumable_add('j_gl_crazyeights')
-                consumable_add('j_gl_crazyeights')
-                consumable_add('j_gl_crazyeights')
-
                 return true
             end
         }))
