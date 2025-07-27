@@ -89,7 +89,7 @@ SMODS.Back{
         name = "Crazy!", -- name the deck appears as in game
         text = {            -- description text for the deck
             "Start with", 
-            "16 Eternal and Negative", 
+            "8 Eternal and Negative", 
             "{C:dark_edition}Crazy Eights!{}"
         }
     },
