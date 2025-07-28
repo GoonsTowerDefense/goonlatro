@@ -32,4 +32,6 @@ Finally, start Balatro and have fun!
 **Cookie** Spectral Card: Gives back **all discards** used.
 
 ### Decks
-**Take my Playstyle** Deck: Starts with all GTD Cards
+**Take my Playstyle** Deck: Starts with all GTD Cards.
+
+**Crazy!** Deck: STarts with 8 **Crazy Eights**.
