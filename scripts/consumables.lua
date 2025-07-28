@@ -1,3 +1,20 @@
+SMODS.ConsumableType{
+    key = 'GTDConsumableType', --consumable type key
+
+    collection_rows = {5,5}, --amount of cards in one page
+    primary_colour = G.C.RED, --first color
+    secondary_colour = G.C.PURPLE, --second color
+    loc_txt = {
+        collection = 'GTD Cards', --name displayed in collection
+        name = 'GTD Cards', --name displayed in badge
+        undiscovered = {
+            name = 'Hidden Ref', --undiscovered name
+            text = {'you dont get the', 'ref'} --undiscovered text
+        }
+    },
+    shop_rate = 0, --rate in shop out of 100
+}
+
 SMODS.Consumable{
     key = 'abigbag', -- key
     set = 'Spectral', -- the set of the card: corresponds to a consumable type
@@ -22,13 +39,13 @@ SMODS.Consumable{
     end,
 
     use = function(self, card, area)
-            local cookie = create_card("Spectral", G.consumeables, nil, nil, nil, nil, "c_gl_cookie", "c_gl_cookie")
+            local cookie = create_card("GTDConsumableType", G.consumeables, nil, nil, nil, nil, "c_gl_cookie", "c_gl_cookie")
             if cookie then
             cookie:add_to_deck()
             G.consumeables:emplace(cookie)
             end
 
-            local justthebag = create_card("Spectral", G.consumeables, nil, nil, nil, nil, "c_gl_justthebag", "c_gl_justthebag")
+            local justthebag = create_card("GTDConsumableType", G.consumeables, nil, nil, nil, nil, "c_gl_justthebag", "c_gl_justthebag")
             if justthebag then
                 justthebag:add_to_deck()
                 G.consumeables:emplace(justthebag)
@@ -39,7 +56,7 @@ SMODS.Consumable{
 
 SMODS.Consumable{
     key = 'cookie', -- key
-    set = 'Spectral', -- the set of the card: corresponds to a consumable type
+    set = 'GTDConsumableType', -- the set of the card: corresponds to a consumable type
     atlas = 'gtd', -- atlas
     pos = {x = 5, y = 1}, -- position in atlas
     loc_txt = {
@@ -55,8 +72,6 @@ SMODS.Consumable{
     unlocked = true,
 
     discovered = true,
-
-    no_collection = true,
 
     can_use = function(self, context)
         return context.cardarea == G.consumables and #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.discards_used > 0
@@ -80,7 +95,7 @@ SMODS.Consumable{
 
 SMODS.Consumable{
     key = 'justthebag',
-    set = 'Spectral',
+    set = 'GTDConsumableType',
     atlas = 'gtd',
     pos = {x = 3, y = 1},
     loc_txt = {
@@ -96,8 +111,6 @@ SMODS.Consumable{
     unlocked = true,
     
     discovered = true,
-
-    no_collection = true,
 
     can_use = function(self, context)
         return context.cardarea == G.consumables and #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.hands_played > 0
@@ -122,7 +135,7 @@ SMODS.Consumable{
 
 SMODS.Consumable{
     key = 'bart', -- key
-    set = 'Tarot', -- the set of the card: corresponds to a consumable type
+    set = 'GTDConsumableType', -- the set of the card: corresponds to a consumable type
     atlas = 'gtd', -- atlas
     pos = {x = 3, y = 0}, -- position in atlas
     loc_txt = {
@@ -138,8 +151,6 @@ SMODS.Consumable{
     unlocked = true,
 
     discovered = true,
-
-    no_collection = true,
 
     can_use = function(self)
         return true

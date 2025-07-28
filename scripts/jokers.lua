@@ -233,7 +233,7 @@
                     end
 
                     if outcome < 0.777 then
-                        local bart = create_card("Tarot", G.consumeables, nil, nil, nil, nil, "c_gl_bart", "c_gl_bart")
+                        local bart = create_card("GTDConsumableType", G.consumeables, nil, nil, nil, nil, "c_gl_bart", "c_gl_bart")
                         if bart then
                             bart:add_to_deck()
                             G.consumeables:emplace(bart)
