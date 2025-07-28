@@ -1,5 +1,7 @@
 # Goonlatro - The GTD Balatro Mod
 
+![thumbnail](https://github.com/user-attachments/assets/d0c6968a-8f2a-4d93-a1cb-f5138da99574)
+
 A mod and texture pack for Balatro that adds various Jokers and Consumables to the game based on GTD Discord references.
 
 Don't expect this to be good cause it's not.
