@@ -13,7 +13,8 @@ SMODS.Back{
         hands = 0,
         discards = 0,
         jokers = {'j_gl_playstyle', 'j_gl_crazyeights'},
-        consumables = {'c_gl_abigbag', 'c_gl_cookie'}
+        consumables = {'c_gl_abigbag', 'c_gl_cookie', 'c_gl_justthebag'},
+        consumable_slot = 3
     },
 
     loc_txt = {
@@ -28,7 +29,8 @@ SMODS.Back{
             self.config.discards,   -- #1#
             self.config.hands,      -- #2#
             self.config.jokers, -- #3#
-            self.config.consumables -- #4#
+            self.config.consumables, -- #4#
+            self.config.consumable_slot -- #5#
         }}
     end
 }
@@ -43,6 +45,7 @@ function joker_add(jKey)
         })
 
         j:add_to_deck()
+        j:start_materialize()
         G.jokers:emplace(j)
 
 

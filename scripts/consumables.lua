@@ -52,9 +52,11 @@ SMODS.Consumable{
     },
     config = {},
 
-    unlocked = false,
-    
-    discovered = false,
+    unlocked = true,
+
+    discovered = true,
+
+    no_collection = true,
 
     can_use = function(self)
         return #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.discards_used > 0
@@ -91,9 +93,11 @@ SMODS.Consumable{
     },
     config = {},
 
-    unlocked = false,
+    unlocked = true,
     
-    discovered = false,
+    discovered = true,
+
+    no_collection = true,
 
     can_use = function(self)
         return #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.hands_played > 0
