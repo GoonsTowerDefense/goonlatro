@@ -34,4 +34,4 @@ Finally, start Balatro and have fun!
 ### Decks
 **Take my Playstyle** Deck: Starts with all GTD Cards.
 
-**Crazy!** Deck: STarts with 8 **Crazy Eights**.
+**Crazy!** Deck: Starts with 8 **Crazy Eights**.
