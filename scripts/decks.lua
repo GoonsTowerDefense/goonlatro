@@ -13,7 +13,7 @@ SMODS.Back{
         hands = 0,
         discards = 0,
         jokers = {'j_gl_playstyle', 'j_gl_crazyeights'},
-        consumables = {'c_gl_abigbag', 'c_gl_cookie', 'c_gl_justthebag'},
+        consumables = {'c_gl_abigbag'},
         consumable_slot = 3
     },
 
