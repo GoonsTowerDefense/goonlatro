@@ -19,7 +19,8 @@ SMODS.Back{
     loc_txt = {
         name = "Take my Playstyle", -- name the deck appears as in game
         text = {            -- description text for the deck
-            "Start with the {C:spectral}GTD{} cards"
+            "Start with the {C:spectral}GTD{} cards",
+            "{C:inactive,s:0.8}Made by iam4pple{}"
         }
     },
     loc_vars = function(self)   --variable setup
@@ -90,7 +91,8 @@ SMODS.Back{
         text = {            -- description text for the deck
             "Start with", 
             "8 Eternal and Negative", 
-            "{C:dark_edition}Crazy Eights!{}"
+            "{C:dark_edition}Crazy Eights!{}",
+            "{C:inactive,s:0.8}Made by iam4pple{}"
         }
     },
     loc_vars = function(self)   --variable setup

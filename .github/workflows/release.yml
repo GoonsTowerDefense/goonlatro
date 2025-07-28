@@ -22,13 +22,13 @@ jobs:
 
       - name: Zip repository
         run: |
-          zip -r Goonlatro.${{ github.event.inputs.tag }}.zip . -x "*.git*"
+          zip -r Goonlatro.zip . -x "*.git*"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.inputs.tag }}
           name: ${{ github.event.inputs.release_name || github.event.inputs.tag }}
-          files: Goonlatro.${{ github.event.inputs.tag }}.zip
+          files: Goonlatro.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -7,6 +7,8 @@ SMODS.Consumable{
         name = 'A Big Bag', -- name of card
         text = { -- text of card
             'Contains one {C:spectral}cookie{}.',
+            '{C:inactive,s:0.8}Idea by Mars1941{}',
+            '{C:inactive,s:0.8}Made by iam4pple{}'
         }
     },
     config = {},
@@ -44,6 +46,8 @@ SMODS.Consumable{
         name = 'Cookie', -- name of card
         text = { -- text of card
             'Give back all {C:white,X:red}discards{} used.',
+            '{C:inactive,s:0.8}Idea by Mars1941{}',
+            '{C:inactive,s:0.8}Made by iam4pple{}'
         }
     },
     config = {},
@@ -80,7 +84,9 @@ SMODS.Consumable{
     loc_txt = {
         name = 'Just the Bag',
         text = {
-            'Give back all {C:white,X:blue}hands{} used.'
+            'Give back all {C:white,X:blue}hands{} used.',
+            '{C:inactive,s:0.8}Idea by iam4pple{}',
+            '{C:inactive,s:0.8}Made by iam4pple{}'
         }
     },
     config = {},

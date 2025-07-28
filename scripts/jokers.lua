@@ -7,6 +7,8 @@
             text = {
                 "{C:mult}X#2#{} Mult, gains",
                 "{C:mult}X#1#{} Mult at end of round.",
+                "{C:inactive,s:0.8}Idea by Mars1941{}",
+                "{C:inactive,s:0.8}Made by iam4pple{}"
             }
         },
 
@@ -107,6 +109,8 @@
             text = {
                 "All {X:blue,C:white}face-down{} cards",
                 "will be drawn {X:red,C:white}face-up{}.",
+                "{C:inactive,s:0.8}Idea by Mars1941{}",
+                "{C:inactive,s:0.8}Made by iam4pple{}"
             }
         },
 
@@ -166,6 +170,8 @@
             text = {
                 "All {X:blue,C:white}face-down{} cards",
                 "will be drawn {X:red,C:white}face-up{}.",
+                "{C:inactive,s:0.8}Idea by Mars1941{}",
+                "{C:inactive,s:0.8}Made by iam4pple{}"
             }
         },
 
