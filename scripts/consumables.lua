@@ -17,8 +17,8 @@ SMODS.Consumable{
 
     discovered = true,
 
-    can_use = function(self)
-        return #G.hand.cards > 0 and #G.deck.cards > 0
+    can_use = function(self, context)
+        return context.cardarea == G.consumables and #G.hand.cards > 0 and #G.deck.cards > 0
     end,
 
     use = function(self, card, area)
@@ -58,8 +58,8 @@ SMODS.Consumable{
 
     no_collection = true,
 
-    can_use = function(self)
-        return #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.discards_used > 0
+    can_use = function(self, context)
+        return context.cardarea == G.consumables and #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.discards_used > 0
     end,
 
     use = function(self, card, area)
@@ -99,8 +99,8 @@ SMODS.Consumable{
 
     no_collection = true,
 
-    can_use = function(self)
-        return #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.hands_played > 0
+    can_use = function(self, context)
+        return context.cardare == G.consumables and #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.hands_played > 0
     end,
 
     use = function(self, card, area)
