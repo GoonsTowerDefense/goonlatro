@@ -100,7 +100,7 @@ SMODS.Consumable{
     no_collection = true,
 
     can_use = function(self, context)
-        return context.cardare == G.consumables and #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.hands_played > 0
+        return context.cardarea == G.consumables and #G.hand.cards > 0 and #G.deck.cards > 0 and G.GAME.current_round.hands_played > 0
     end,
 
     use = function(self, card, area)
@@ -118,4 +118,34 @@ SMODS.Consumable{
         }))
     end
 
+}
+
+SMODS.Consumable{
+    key = 'bart', -- key
+    set = 'Tarot', -- the set of the card: corresponds to a consumable type
+    atlas = 'gtd', -- atlas
+    pos = {x = 3, y = 0}, -- position in atlas
+    loc_txt = {
+        name = 'Bart', -- name of card
+        text = { -- text of card
+            'Eat my shorts.',
+            '{C:inactive,s:0.8}Idea by Mars1941{}',
+            '{C:inactive,s:0.8}Made by iam4pple{}'
+        }
+    },
+    config = {},
+
+    unlocked = true,
+
+    discovered = true,
+
+    no_collection = true,
+
+    can_use = function(self)
+        return true
+    end,
+
+    use = function(self, card, area)
+            ease_dollars(15)
+        end,
 }

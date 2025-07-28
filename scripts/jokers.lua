@@ -153,7 +153,6 @@
             if context.hand_drawn then
                 for index, card in ipairs(G.hand.cards) do
                     if G.hand.cards[index].facing == 'back' then
-                    -- Flip the card's facing and sprite_facing to 'back'
                     G.hand.cards[index]:flip()
                     end
                 end
@@ -161,22 +160,25 @@
     end
     }
 
-    SMODS.Joker { -- Bart --
+    SMODS.Joker { -- Click the Bart --
        key = 'clickthebart',
 
            -- description of the joker.
         loc_txt = {
             name = 'Click the Bart',
             text = {
-                "All {X:blue,C:white}face-down{} cards",
-                "will be drawn {X:red,C:white}face-up{}.",
+                "Randomly drops a {C:tarot}Bart{}",
                 "{C:inactive,s:0.8}Idea by Mars1941{}",
                 "{C:inactive,s:0.8}Made by iam4pple{}"
             }
         },
 
            -- config of the joker. Variables go here.
-        config = {},
+        config = {
+           extra = {
+                odds = 10
+         }
+     },
             -- rarity level, 0 = common, 1 = uncommon, 2 = rare, 3 = legendary.
         rarity = 2,
 
@@ -192,10 +194,10 @@
         cost = 8,
 
             -- whether it is unlocked by default.
-        unlocked = false,
+        unlocked = true,
 
             -- whether it is discovered by default.
-        discovered = false,
+        discovered = true,
 
             -- whether blueprint can copy this joker.
         blueprint_compat = true,
@@ -208,4 +210,36 @@
 
             -- whether duplicates of this joker can appear in the shop by default.
         allow_duplicates = true,
+
+            -- loc_vars works with the config and gives you text variables to work with.
+            -- these are formatted as #n#, where n is the position in the variable table.
+        loc_vars = function(self, info_queue, card)
+                        return {
+                            vars = {
+                                -- #1#
+                                card.ability.extra.odds,
+                                '' .. (G.GAME and G.GAME.probabilities.normal or 1)
+                            }
+                        }
+                    end,
+
+        calculate = function(self, card, context)
+            if context.joker_main then
+                if pseudorandom('bart') < G.GAME.probabilities.normal / card.ability.extra.odds then
+                    local outcome = pseudorandom('bart_outcome')
+
+                    if outcome == nil then
+                        error("Outcome is nil. Something went wrong with the random generation or the way outcome is calculated.")
+                    end
+
+                    if outcome < 0.777 then
+                        local bart = create_card("Tarot", G.consumeables, nil, nil, nil, nil, "c_gl_bart", "c_gl_bart")
+                        if bart then
+                            bart:add_to_deck()
+                            G.consumeables:emplace(bart)
+                        end
+                    end
+                end
+            end
+        end
     }
