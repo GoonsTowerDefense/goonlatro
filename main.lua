@@ -268,7 +268,7 @@ TexturePack{
 			'Retextures Jokers',
 			'to be {C:legendary}GTD!{}',
 			'Art by {E:1,C:dark_edition,S:1.1}GMO298',
-			'{C:inactive,s:0.8}Code by iam4pple.{}',
+			'{C:inactive,s:0.8}Code by GMO298.{}',
 		}
 	}
 }

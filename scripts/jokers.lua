@@ -8,7 +8,7 @@
                 "{C:mult}X#2#{} Mult, gains",
                 "{C:mult}X#1#{} Mult at end of round.",
                 "{C:inactive,s:0.8}Idea by Mars1941{}",
-                "{C:inactive,s:0.8}Made by iam4pple{}"
+                "{C:inactive,s:0.8}Made by iam4pple and GMO298{}"
             }
         },
 
