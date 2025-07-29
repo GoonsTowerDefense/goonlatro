@@ -167,7 +167,7 @@
         loc_txt = {
             name = 'Click the Bart',
             text = {
-                "Randomly drops a {C:tarot}Bart{}",
+                "Randomly drops a {C:money}Bart{}",
                 "{C:inactive,s:0.8}Idea by Mars1941{}",
                 "{C:inactive,s:0.8}Made by iam4pple{}"
             }
