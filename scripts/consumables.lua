@@ -202,8 +202,6 @@ SMODS.Consumable{
 
     discovered = true,
 
-    cost = -30,
-
     in_pool = function(self, args)
         return true, { allow_duplicates = true }
     end,

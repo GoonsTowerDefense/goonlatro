@@ -176,7 +176,7 @@
            -- config of the joker. Variables go here.
         config = {
            extra = {
-                odds = 10
+                odds = 25
          }
      },
             -- rarity level, 0 = common, 1 = uncommon, 2 = rare, 3 = legendary.
@@ -226,13 +226,6 @@
         calculate = function(self, card, context)
             if context.joker_main then
                 if pseudorandom('bart') < G.GAME.probabilities.normal / card.ability.extra.odds then
-                    local outcome = pseudorandom('bart_outcome')
-
-                    if outcome == nil then
-                        error("Outcome is nil. Something went wrong with the random generation or the way outcome is calculated.")
-                    end
-
-                    if outcome < 0.777 then
                         local bart = create_card("GTDConsumableType", G.consumeables, nil, nil, nil, nil, "c_gl_bart", "c_gl_bart")
                         if bart then
                             bart:add_to_deck()
@@ -241,5 +234,4 @@
                     end
                 end
             end
-        end
     }
