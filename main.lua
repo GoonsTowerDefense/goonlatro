@@ -80,11 +80,3 @@ SMODS.Atlas{
 	frames = 4,
     prefix_config = {key = false}
 }
-
-AltTexture{
-	localization = { -- keys of objects with new localizations
-        j_lucky_cat = {
-            name = 'Marcy'
-         }
-     }
-}
